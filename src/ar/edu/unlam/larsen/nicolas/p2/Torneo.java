@@ -36,13 +36,16 @@ public class Torneo {
 
     public boolean registrarGol(Integer numeroPartido, Integer numeroCamiseta, Equipo equipo, Integer minuto) throws JugadorNoEncontradoException {
         Partido partido = getPartidoById(numeroPartido);
-        Jugador goleador = partido.bucarJugador(numeroCamiseta, equipo);
-        if (goleador == null) {
-            throw new JugadorNoEncontradoException();
-        } else {
-            this.goles.add(goleador.getNombreYApellido() + " " + minuto + " min.");
+        if (partido != null) {
+            Jugador goleador = partido.bucarJugador(numeroCamiseta, equipo);
+            if (goleador == null) {
+                throw new JugadorNoEncontradoException();
+            } else {
+                this.goles.add(goleador.getNombreYApellido() + " " + minuto + " min.");
+            }
+            return true;
         }
-        return true;
+        return false;
     }
 
     public Partido getPartidoById(Integer numeroPartido) {

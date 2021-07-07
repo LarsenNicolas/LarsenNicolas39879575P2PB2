@@ -30,17 +30,17 @@ public class Partido {
     public Jugador bucarJugador(Integer numeroCamiseta, Equipo equipo) throws JugadorNoEncontradoException {
         Jugador goleador = null;
         if (equipo == Equipo.Local) {
-            this.golesEquipoLocal++;
             for (Jugador jugador: this.equipoLocal) {
                 if( jugador.getNumeroDeCamiseta() == numeroCamiseta ) {
+                    this.golesEquipoLocal++;
                     goleador = jugador;
                 }
             }
         }
         if (equipo == Equipo.Visitante) {
-            this.getGolesEquipoVisitante++;
             for (Jugador jugador: this.equipoVisitante) {
                 if( jugador.getNumeroDeCamiseta() == numeroCamiseta ) {
+                    this.getGolesEquipoVisitante++;
                     goleador = jugador;
                 }
             }
