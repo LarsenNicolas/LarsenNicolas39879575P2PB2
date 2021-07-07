@@ -106,9 +106,9 @@ public class TorneoTest {
 
         Partido nuevoPartido = copaAmerica.registrarPartido("Argentina", "Uruguay");
 
-        copaAmerica.registrarGol(1,10, Equipo.Local, 15);
-        copaAmerica.registrarGol(1,5, Equipo.Visitante, 20);
-        copaAmerica.registrarGol(1,7, Equipo.Local, 80);
+        copaAmerica.registrarGol(nuevoPartido.getIdPartido(),10, Equipo.Local, 15);
+        copaAmerica.registrarGol(nuevoPartido.getIdPartido(),5, Equipo.Visitante, 20);
+        copaAmerica.registrarGol(nuevoPartido.getIdPartido(),7, Equipo.Local, 80);
 
         Assert.assertEquals(Equipo.Local, copaAmerica.getEquipoGanador(nuevoPartido.getIdPartido()));
     }
